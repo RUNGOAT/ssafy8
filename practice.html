@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+
+    /* 자식 결합자 */
+    div > p{
+      border: 5px solid black;
+      width: 100px;
+      height: 100px;
+      color: red;
+      font-size: larger;
+    }
+    p {
+      color: blue;
+    }
+
+    /* 자손 결합자 */
+    /* div p{
+      color: blue;
+    } */
+
+    /* 자손결합자에서는 div하위의 모든 p요소를 선택하고, 
+    자식 결합자에서는 div 바로 한번 아래의  p요소만 선택한다 */
+
+  </style>
+</head>
+<body>
+
+  <div style="border: solid;">
+    dd
+  </div>
+  <div>
+    <p>1.자식</p>
+    <span>
+      <p>2.자손</p>
+      <span>222. 자손</span>
+    </span>
+    <p>3.자식</p>
+  <div>
+    <p>             <!-- 결합자 적용-->
+      <p> 4.자손    <!-- 결합자 적용-->
+        <p>         <!-- 결합자 적용-->
+          4-1
+          <p>       <!-- 결합자 적용-->
+            4-2
+          </p>
+        </p>
+      </p>
+      <p>           <!-- 결합자 적용-->
+      <span>dd</span>
+      <span>dd</span>
+      <span>dd</span>
+      </p>
+      <span>dd</span>   <!--상속 X -->
+      <span>dd</span>   <!--상속 X -->
+      <span>dd</span>   <!--상속 X -->
+      <p>           <!-- 결합자 적용-->
+        4-3
+      </p>
+    </p>
+  </div>
+
+    
+    <p>
+      <span>
+        <!-- 중간에 span에 들어가도 p의 제일 상위에 p가 있어서 글자가 빨간색으로 변한다 -->
+        5.자손
+      </span>
+      <span>
+        <!-- 중간에 span에 들어가도 p의 제일 상위에 p가 있어서 글자가 빨간색으로 변한다 -->
+        5.자손
+      </span><span>
+        <!-- 중간에 span에 들어가도 p의 제일 상위에 p가 있어서 글자가 빨간색으로 변한다 -->
+        5.자손
+      </span>
+    </p>
+  </div>
+</body>
+</html>
